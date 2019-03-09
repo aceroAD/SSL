@@ -1,0 +1,3 @@
+Clave del Almacen de Claves del Servidor: almacenservidor
+Alias del par de claves: servidorSSL
+Clave del par de claves del servidor: claveservidor
