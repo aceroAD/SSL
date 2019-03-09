@@ -21,8 +21,8 @@ public class ServidorCoke {
 	public static final int puerto = 6666;
 	public static final int FILAS = 6;
 	private static Socket conexion;
-	private boolean[] izquierda = new boolean[FILAS];
-	private boolean[] derecha = new boolean[FILAS];
+	private static boolean[] izquierda = new boolean[FILAS];
+	private static boolean[] derecha = new boolean[FILAS];
 
 	
 	private String rutaAlmacen;
@@ -88,7 +88,7 @@ public class ServidorCoke {
 		}
 	}
 	
-	public synchronized boolean reservarAsiento(int fila, String lado) {
+	public static synchronized boolean reservarAsiento(int fila, String lado) {
 		if (lado.equalsIgnoreCase("izquierda")) {
 			if(izquierda[fila] == true)
 				return false;
@@ -108,7 +108,7 @@ public class ServidorCoke {
 		return false;
 	}
 	
-	public synchronized boolean anularReserva(int fila, String lado) {
+	public static synchronized boolean anularReserva(int fila, String lado) {
 		if (lado.equalsIgnoreCase("izquierda")) {
 			if(izquierda[fila] == false)
 				return false;
@@ -128,12 +128,12 @@ public class ServidorCoke {
 		return false;
 	}
 	
-	public  boolean[] getIzquierda() {
-		return this.izquierda;
+	public static boolean[] getIzquierda() {
+		return izquierda;
 	}
 	
-	public  boolean[] getDerecha() {
-		return this.derecha;
+	public static boolean[] getDerecha() {
+		return derecha;
 	}
 	
 

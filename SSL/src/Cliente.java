@@ -57,6 +57,7 @@ public class Cliente {
 			System.out.println(respuesta);
 			cadena = sc.nextLine();
 		}
+		sc.close();
 	}
 	
 	public SSLSocket obtenerSocket(String ip, int puerto) throws KeyStoreException, 
